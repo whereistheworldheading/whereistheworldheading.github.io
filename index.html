@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/svg-icons.css">
+
+    <style>
+    .center {
+    position: absolute;
+    left: 0;
+    top:35%;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    }
+    .top {
+        position: absolute;
+        left: 0;
+        top:05%;
+        width: 100%;
+        text-align: left;
+        font-size: 30px;
+    }
+    </style>
+</head>
+
+<body>
+
+<article id="webslides">
+    <section class="zoomIn bg-black">
+        <span class="background" style="background-image:url('https://images8.alphacoders.com/601/601973.jpg')"></span>
+        <div class="center">
+            <h1 class="aligncenter">Where is the world heading ?</h1>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Military spending</h2>
+                <p class="text-subtitle">Today the military spendings are 10x higher than by the end of the WWII.</p>
+                <hr>
+                <p>The military spending worldwide has been rising since the World War 2.
+                    There was a slight decrease after the Cold War, then the spendings resumed their rise.</p>
+            </div>
+            <div class="content-right">
+                <canvas id="military-spending-chart" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <!-- Third slide -->
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Military conflicts casualities by region</h2>
+                <p class="text-subtitle">The casualities have been decreasing over the decades</p>
+                <hr>
+                <p>Key dates on the figure :</p>
+                <p>The Korean War, 1950 - 1953<br>
+
+                The Kenya Emergency, 1952 - 1960<br>
+
+                The Malayan Emergency, 1948 - 1960<br>
+
+                The Aden Emergency, 1963 - 1967<br>
+
+                The Troubles, 1968 - 1998<br>
+
+                The Falklands War, 1982<br>
+
+                The Gulf War, 1990 - 1991<br>
+
+                The Bosnian War, 1992 - 1995<br>
+
+                The Kosovo War, 1998 - 1999<br>
+
+                The War in Afghanistan, 2001 - 2014 <br>
+
+                The Global War on Terrorism, 2001 - 2013 <br>
+
+                The Iraq War and Insurgency, 2003 - 2011 </p>
+            </div>
+            <div class="content-right">
+                <canvas id="wars-by-reg" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Military conflicts casualities by type of conflict</h2>
+                <p class="text-subtitle">The interstate armed conflicts are disappearing</p>
+                <hr>
+                <p>
+                    Some explaining factors are : <br>
+                    - The nuclear dissuasion<br>
+                    - The devastating cost for both parties<br>
+                    - The world sanctions<br>
+                </p>
+            </div>
+            <div class="content-right">
+                <canvas id="conflicts-deaths-by-type" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Number of ongoing conflicts by category</h2>
+                <p class="text-subtitle">Other than civil wars, the other types of conflicts have been disappearing.</p>
+                <hr>
+                <p> There is a rise of intrastate conflicts for political or identity reasons. <br><br>
+                    There is also a rise of new forms of warfare : <br>
+                    - Cyberwars : comprising intellectual property theft, hacking key infrastructures, or distabilising major networks<br>
+                    - Terrorism <br>
+                    - Propaganda which is more targeted and at a larger scale, using fake news for example
+                </p>
+
+            </div>
+            <div class="content-right">
+                <canvas id="conflicts-count-by-type" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Refugee population</h2>
+                <p class="text-subtitle">The trend was reversed on 2005, and the refugee population has been rising since then.</p>
+                <p> The global situation has worsened in 2016 : <br>
+                - 10.3 million people were newly displaced (20 displacements every minute)<br>
+                - 10 million people were stateless or at risk of stateless<br>
+                - 50 % of the refugee population were childern
+                - 552, 200 refugees returned
+                - 2.9 million refugees were hosted by Turkey, which hosts the largest number of refugees worldwide
+                </p>
+                <h4><a href="headlines.html">News headlines bubble clouds</a></h4>
+
+                <p>The goal is to present a simplified view about the main keywords used in the headlines in relation with these topics<p>
+            </div>
+            <div class="content-right">
+                <canvas id="refugee-chart" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="zoomOut bg-black">
+        <span class="background" style="background-image:url('https://images8.alphacoders.com/601/601973.jpg')"></span>
+        <div class="wrap">
+            <div class="top">
+                <h2>References</h2>
+                <a href="https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO">The PRIO datasets</a><br>
+                <a href="https://data.worldbank.org/indicator/SM.POP.REFG.OR"></a> The World Bank<br>
+                <a href="https://www.kaggle.com/therohk/million-headlines/version/6">The Kaggle million headline dataset</a><br>
+                <a href="http://www.unhcr.org/5943e8a34">The UN refugee agency</a><br>
+            </div>
+        </div>
+    </section>
+</article>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<!--<script type="text/javascript" src="chartjs-plugin-deferred.js"></script>-->
+<!--<script src="ChartNew.js"></script>-->
+<script src="static/js/webslides.js"></script>
+<script>
+    window.ws = new WebSlides();
+</script> <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 }); -->
+
+<script type="text/javascript" src="charts.js"></script>
+<!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+
+<script defer src="static/js/svg-icons.js"></script>
+</body>

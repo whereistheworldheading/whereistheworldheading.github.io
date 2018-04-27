@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Where is the world heading ?</title>
+
+</head>
+<body>
+
+<h1>Military spendings</h1>
+<p></p>
+
+Increase in military spendings
+<canvas id="refugee-chart" width="800" height="600"></canvas>
+<canvas id="military-spending-chart" width="800" height="600"></canvas>
+<canvas id="conflicts-chart" width="800" height="600"></canvas>
+<canvas id="war-deaths-chart" width="800" height="600"></canvas>
+
+<script src="ChartNew.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>-->
+<script type="text/javascript" src="chartjs-plugin-deferred.js"></script>
+<script type="text/javascript" src="charts2.js"></script>
+
+Increase of refugees
+Fences in the world
+
+Type of wars
+- Conventional
+- Unconventional
+- Cyber
+
+Which countries are the most impacted by conflicts ?
+Which countries host the most refugees ?
+
+Area risk map
+
+
+</body>
+</html>

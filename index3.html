@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/svg-icons.css">
+
+    <style>
+        .center {
+            position: absolute;
+            left: 0;
+            top:35%;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+
+    <!-- CSS concatenated and minified via ant build script-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+<article id="webslides">
+    <section class="zoomIn bg-black">
+        <span class="background" style="background-image:url('https://images8.alphacoders.com/601/601973.jpg')"></span>
+        <div class="center">
+            <h1 class="aligncenter">Where is the world heading ?</h1>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Military spending</h2>
+                <p class="text-subtitle">Today the military spendings are 10x higher than by the end of the WWII.</p>
+                <hr>
+                <p>The military spending worldwide has been rising since the World War 2.
+                    There was a slight decrease after the Cold War, then the spendings resumed their rise.</p>
+            </div>
+            <div class="content-right">
+                <canvas id="military-spending-chart" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <!-- Third slide -->
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Military conflicts casualities by region</h2>
+                <p class="text-subtitle">The casualities have been decreasing over the decades</p>
+                <hr>
+                <p>Key dates on the figure :</p>
+                <p>1950 - 1953 : Korean war </p>
+                <!--<p>The Korean War, 1950–1953<br>-->
+
+                    <!--The Kenya Emergency, 1952–1960<br>-->
+
+                    <!--The Suez Crisis, 1956<br>-->
+
+                    <!--The Malayan Emergency, 1948–1960<br>-->
+
+                    <!--The Aden Emergency, 1963–1967<br>-->
+
+                    <!--The Troubles, 1968–1998-->
+
+                    <!--The Falklands War, 1982-->
+
+                    <!--The Gulf War, 1990–1991-->
+
+                    <!--The Bosnian War, 1992–1995-->
+
+                    <!--The Kosovo War, 1998–1999-->
+
+                    <!--The Global War on Terrorism, 2001–2013-->
+
+                    <!--The War in Afghanistan, 2001–2014-->
+
+                    <!--The Iraq War and Insurgency, 2003–2011 </p>-->
+            </div>
+            <div class="content-right">
+                <canvas id="wars-by-reg" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Military conflicts casualities by type of conflict</h2>
+                <p class="text-subtitle">The interstate armed conflicts are disappearing</p>
+                <hr>
+                <p>Civil wars account for the most part of the casualities. By 2008, the casualities are almost the lowest over the post WWII era.</p>
+                <p> The arab spring started by the end of 2010, the casualities will be significantly higher following its events.</p>
+            </div>
+            <div class="content-right">
+                <canvas id="conflicts-deaths-by-type" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Number of ongoing conflicts by category</h2>
+                <p class="text-subtitle">Other than civil wars, the other types of conflicts have been disappearing.</p>
+                <hr>
+                <p>As of 2014 SVG usage is growing continuously (image below) and it has doubled over the last year (right image).</p>
+            </div>
+            <div class="content-right">
+                <canvas id="conflicts-count-by-type" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>Refugee population</h2>
+                <p class="text-subtitle">The trend was reversed on 2005, and the refugee population has been rising since then.</p>
+                <hr>
+                <p>As of 2014 SVG usage is growing continuously (image below) and it has doubled over the last year (right image).</p>
+            </div>
+            <div class="content-right">
+                <canvas id="refugee-chart" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div id="container" class="container">
+                <select id="text-select">
+                    <option value="war">War</option>
+                    <option value="refugee">refugee</option>
+                    <option value="threat">threat</option>
+                    <option value="military">military</option>
+                    <option value="cyber">cyber</option>
+                    <option value="conflict">conflict</option>
+                    <option value="arms">arms</option>
+                    <option value="civil">civil</option>
+                </select>
+                <header>
+                    <h1>The most frequent words appearing in the headlines with :</h1>
+                    <h2 id="book-title"></h2>
+                </header>
+                <div id="main" role="main">
+                    <div id="vis"></div>
+                    <div id="status"></div>
+                    <div id="controls">
+                        <h3>Jitter</h3>
+                        <form id="jitter" oninput="output.value = (jitter_input.value / 200).toFixed(3)" >
+                            <input id="jitter_input" type="range" min="0" max="400" value="100" style="width:240px;">
+                            <output name="output" for="input">0.5</output>
+                        </form>
+                    </div>
+                </div>
+                <footer>
+                    <p><a href="http://vallandingham.me/building_a_bubble_cloud.html">Blog Post</a> | <a href="https://github.com/vlandham/bubble_cloud">Source Code</a> | <a href="http://www.nytimes.com/interactive/2012/09/04/us/politics/democratic-convention-words.html">Original Inspiration</a></p>
+                </footer>
+            </div>
+        </div>
+    </section>
+    <section class="slideInRight">
+        <div class="wrap">
+            <div class="content-left">
+                <h2>References</h2>
+                <p> The PRIO datasets https://www.prio.org/Data/Armed-Conflict/UCDP-PRIO/ </p>
+                <p> The World Bank https://data.worldbank.org/indicator/SM.POP.REFG.OR </p>
+                <p> The Kaggle million headline dataset https://www.kaggle.com/therohk/million-headlines/version/6 </p>
+                <h2>The website was rendered using : </h2>
+                <p> Chart.js </p>
+                <p> Bubble Cloud</p>
+                <p> Webslides</p>
+            </div>
+        </div>
+    </section>
+</article>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<!--<script type="text/javascript" src="chartjs-plugin-deferred.js"></script>-->
+<!--<script src="ChartNew.js"></script>-->
+<script src="static/js/webslides.js"></script>
+<script>
+    window.ws = new WebSlides();
+</script> <!-- Autoslide? window.ws = new WebSlides({ autoslide: 8000 }); -->
+
+<script type="text/javascript" src="charts.js"></script>
+<!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+
+<script defer src="static/js/svg-icons.js"></script>
+
+
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+<script defer src="js/plugins.js"></script>
+<script src="js/libs/coffee-script.js"></script>
+<script src="js/libs/d3.min.js"></script>
+<script type="text/coffeescript" src="coffee/vis.coffee"></script>
+<script type="text/javascript">
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+
+</body>
